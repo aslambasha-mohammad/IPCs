@@ -26,5 +26,6 @@ int main()
 	else
 		printf("Failed to get the shared memory pointer\n");
 
+	shmdt(memPtr);
 	return 0;
 }

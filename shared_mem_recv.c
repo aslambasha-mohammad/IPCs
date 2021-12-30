@@ -23,5 +23,7 @@ int main()
 	}
 	else
 		printf("Failed to read the data from shared memory\n");
+
+	shmdt(memPtr);
 	return 0;
 }
