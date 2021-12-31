@@ -27,5 +27,9 @@ int main()
 		printf("Failed to get the shared memory pointer\n");
 
 	shmdt(memPtr);
+	//If we remove shared memory here then receiver can't get the shmId of this shared memory
+	//if(shmctl(shmId, IPC_RMID, 0) < 0)
+	//	printf("Unable to remove the shared memory\n");
+
 	return 0;
 }

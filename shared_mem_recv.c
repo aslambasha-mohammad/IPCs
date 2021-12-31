@@ -25,5 +25,9 @@ int main()
 		printf("Failed to read the data from shared memory\n");
 
 	shmdt(memPtr);
+	//Need to remove the shared memory here since sender won't remove this
+	if(shmctl(shmId, IPC_RMID, 0) < 0)
+		printf("Unable to remove the shared memory\n");
+
 	return 0;
 }
